@@ -1,5 +1,6 @@
 package com.tegarap.starwarapp.ui.characters
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -8,10 +9,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tegarap.starwarapp.data.models.Character
 import com.tegarap.starwarapp.R
+import com.tegarap.starwarapp.ui.MainActivity
 import com.tegarap.starwarapp.ui.utils.InfiniteScrollListener
 import kotlinx.android.synthetic.main.activity_character.*
 
-class CharacterActivity : AppCompatActivity(), CharactersView {
+class CharacterActivity : AppCompatActivity(), CharactersView, CharactersAdapter.OnItemClickCallback {
+    override fun onItemClicked(data: Character) {
+        startActivity(Intent(this,MainActivity::class.java))
+    }
 
     private val charactersPresenter : CharactersPresenter = CharactersPresenter(this, CharactersInteractor())
     private var characters: MutableList<Character> = ArrayList()

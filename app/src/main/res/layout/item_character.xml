@@ -7,6 +7,7 @@
     android:layout_marginRight="8dp"
     android:layout_marginTop="4dp"
     android:layout_marginBottom="4dp"
+    android:id="@+id/list_rv_character"
     android:background="@drawable/bg_list"
     android:padding="12dp">
 
