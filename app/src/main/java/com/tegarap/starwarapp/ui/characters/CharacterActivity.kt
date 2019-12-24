@@ -21,6 +21,7 @@ class CharacterActivity : AppCompatActivity(), CharactersView {
         super.onStart()
         setAdapter(rv_characters, characters)
         charactersPresenter.loadCharacters(1)
+
     }
 
     override fun onDestroy() {
@@ -28,14 +29,14 @@ class CharacterActivity : AppCompatActivity(), CharactersView {
         charactersPresenter.onDestroy()
     }
 
-    fun setAdapter(recyclerView: RecyclerView, characters: List<Character>) {
+    private fun setAdapter(recyclerView: RecyclerView, characters: List<Character>) {
         val linearLayoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = linearLayoutManager
-        recyclerView.adapter = CharactersAdapter(characters, this)
+        recyclerView.adapter = CharactersAdapter(characters)
         recyclerView.addOnScrollListener(InfiniteScrollListener({ loadMore() }, linearLayoutManager))
     }
 
-    fun loadMore() {
+    private fun loadMore() {
         charactersPresenter.loadCharacters(nextPage)
     }
 

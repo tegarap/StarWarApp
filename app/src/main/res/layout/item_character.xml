@@ -10,12 +10,12 @@
     android:background="@drawable/bg_list"
     android:padding="12dp">
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageView
         android:id="@+id/img_item_foto"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginEnd="16dp"
-        tools:src="@drawable/ic_people" />
+        android:src="@drawable/ic_people"/>
 
     <LinearLayout
         android:layout_width="match_parent"
