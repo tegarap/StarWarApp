@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">StarWarApp</string>
+    <string name="sw_character_name">Nama Karakter Star Wars</string>
+    <string name="description">Keterangan</string>
 </resources>
