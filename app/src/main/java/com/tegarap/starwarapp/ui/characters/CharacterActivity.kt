@@ -13,10 +13,7 @@ import com.tegarap.starwarapp.ui.MainActivity
 import com.tegarap.starwarapp.ui.utils.InfiniteScrollListener
 import kotlinx.android.synthetic.main.activity_character.*
 
-class CharacterActivity : AppCompatActivity(), CharactersView, CharactersAdapter.OnItemClickCallback {
-    override fun onItemClicked(data: Character) {
-        startActivity(Intent(this,MainActivity::class.java))
-    }
+class CharacterActivity : AppCompatActivity(), CharactersView {
 
     private val charactersPresenter : CharactersPresenter = CharactersPresenter(this, CharactersInteractor())
     private var characters: MutableList<Character> = ArrayList()
